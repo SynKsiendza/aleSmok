@@ -1,17 +1,16 @@
 html /* TODO: delete */
 {
-  margin: 20px; /* TODO: delete */
-  background-color: #1a28a9; /* TODO: delete */
   font-family: 'Lato', sans-serif;
   font-size: 20px;
 }
 body
 {
-  width: 607px;
+  width: 90%;
   height: 900px;
-  background-color: #313131;
-  border-radius: 15px; /* TODO: delete */
+  background-color: #003475;
   color: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .header
@@ -25,7 +24,7 @@ body
   width: 90%;
   height: 20%;
   margin: 5%;
-  background-color: #646464;
+  background-color: #212E39;
   border-radius: 15px;
 }
 .indicator
@@ -43,44 +42,47 @@ body
   font-size: 20px;
   float: left;
   width: 90%;
-  height: 30px;
+  height: 40px;
   margin-right: 5%;
   margin-left: 5%;
   margin-top: 3%;
   margin-bottom: 3%;
-
-  background-color: #9c9c9c;
+  padding: 5px;
+  background-color: #6AE29B;
   border: #76bf66;
   border-radius: 10px;
   text-align: center;
 }
-.button-about-smog:hover, .button-credits:hover, .button-smog-calc:hover, .button-info-anty-smog:hover
+.back-button
 {
-  background-color: #8b8b8b;
-}
-.button-about-smog:active, .button-credits:active, .button-smog-calc:active, .button-info-anty-smog:active
-{
-  background-color: #7a7a7a;
-}
-.button-info-anty-smog
-{
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
   height: 30px;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  align-content: center;
+  background-color: #6AE29B;
+  border-radius: 10px;
+  text-align: center;
 }
-.button-about-smog
+.button-about-smog:hover, .button-credits:hover, .button-smog-calc:hover, .button-info-anty-smog:hover, .back-button:hover
 {
-  height: 30px;
+  background-color: #5AD18A;
 }
-.button-credits
+.button-about-smog:active, .button-credits:active, .button-smog-calc:active, .button-info-anty-smog:active, .back-button:active
 {
-  height: 30px;
-}
-.button-smog-calc
-{
-  height: 30px;
+  background-color: #4AC07A;
 }
 .no-link
 {
   color: #ffffff;
+  text-decoration: none;
+}
+.no-link2
+{
+  color: #92eeb6;
   text-decoration: none;
 }
 .footer
@@ -94,4 +96,11 @@ body
   margin-right: auto;
   margin-bottom: 5%;
   margin-top: 5%;
+}
+.main-content
+{
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 5%;
 }
