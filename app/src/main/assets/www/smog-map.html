@@ -19,20 +19,28 @@
 <!-- MAIN -->
 <div class="header">
     <br>
-    <h4>Informacje i autorzy</h4>
+    <h4>Mapa Smogowa</h4>
 </div>
-<div class="main-content">
-    Aplikacja aleSmok<sup>&copy;</sup>, stworzona została aby poprawić świadomość społeczeństwa oraz przeciwdziałać powiększającemu się zagrożeniu jakim jest smog.
-    <br><br>
-    Aplikacja została stworzona przy pomocy programu <a href="developer.android.com/studio" class="no-link2">Android Studio</a>, <br>oraz języków Java, JavaScript, HTML oraz CSS.
-    <br><br>
-    Kod źródłowy, więcej informacji, listę zmian oraz planowane aktualizacje można odnaleźć na <a href="https://github.com/synksiendza/aleSmok/" class="no-link2">GitHubie</a> oraz stronie <a href="https://alesmok.github.io" class="no-link2">WWW</a>
-    <br><br>
-    Autorzy: Kacper Trzosiński, Michał Rakuś, Mateusz Zawiła, Cezary Pawlik i Sylwia Sordyl.
-    <br><br>
-    Aplikacja została wykonana na potrzeby konkursu <a href="https://esa.nask.pl/aktualnosci/wpis/technikon-esa-pilotaz-2023" class="no-link2">TECHNIKON</a> organizowany przez <a href="http://nask.pl" class="no-link2">Instytut NASK</a>
 
-</div>
+<div  id='map'  style='height:50%;'></div>
+<link  rel="stylesheet"  href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css"  />
+<script  src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
+
+<script>
+    var  OSM_URL  =  'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+    var  OSM_ATTRIB  =  '&copy;  <a  href="http://openstreetmap.org/copyright">OpenStreetMap</a>  contributors';
+    var  osmLayer  =  L.tileLayer(OSM_URL,  {attribution:  OSM_ATTRIB});
+
+    var  WAQI_URL    =  "https://tiles.waqi.info/tiles/usepa-pm25/{z}/{x}/{y}.png?token=_TOKEN_ID_";
+    var  WAQI_ATTR  =  'Air  Quality  Tiles  &copy;  <a  href="http://waqi.info">waqi.info</a>';
+    var  waqiLayer  =  L.tileLayer(WAQI_URL,  {attribution:  WAQI_ATTR});
+
+    var  map  =  L.map('map').setView([51.505,  -0.09],  11);
+    map.addLayer(osmLayer).addLayer(waqiLayer);
+</script>
+
+
+
 <img src="img/logo.jpg" class="logo">
 <div class="footer">Stworzone<sup>&copy;</sup> przez - <b>RV</b></div>
 <br/>
