@@ -1,4 +1,4 @@
-html /* TODO: delete */
+html
 {
   font-family: 'Lato', sans-serif;
   font-size: 20px;
@@ -6,7 +6,7 @@ html /* TODO: delete */
 body
 {
   width: 90%;
-  height: 900px;
+  height: 800px;
   background-color: #003475;
   color: #ffffff;
   margin-left: auto;
