@@ -89,6 +89,7 @@ body
 {
   text-align: center;
   float: bottom;
+  ;
 }
 .logo
 {
@@ -96,6 +97,9 @@ body
   margin-right: auto;
   margin-bottom: 5%;
   margin-top: 5%;
+  height: 250px;
+  width: 250px;
+  align-content: center;
 }
 .main-content
 {
