@@ -14,22 +14,38 @@
 
     <script src="js/index.js"></script>
     <script src="js/actions.js"></script>
-    <script src="js/jquery-3.2.1.min.js"></script>
 </head>
 <body>
 <!-- MAIN -->
 <div class="header">
     <br>
-    <h4>Mapa Smogowa</h4>
-<link  rel="stylesheet"  href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css"  />
-<script  src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
-
-<div class="map"><iframe scrolling="no" width="99%" height="700px" src="https://www.iqair.com/air-quality-map"></iframe>
+    <h4>Kalkulator śladu węglowego</h4>
 </div>
+<a href="smog-calc.html" class="no-link"><div class="calc-button">Spalanie Samochodu</div></a>
+<br><br>
+<a href="smog-calc-heating.html" class="no-link"><div class="calc-button">Ogrzewanie</div></a>
+<br><br>
+<a href="smog-calc-electricity.html" class="no-link"><div class="calc-button">Prąd Elektryczny</div></a>
+<div  class="main-content">
+    Emisja spowodowana przez twoje zużycie prądu:<br><br>
+    Zużyty prąd elektryczny w ciągu miesiąca w kWh:<br>
+    <input type="number" id="input-spalanie-kwh" >
+    <br><br>
+    <button class="calc-button" onclick="SpalanieAuta()">&nbsp; OBLICZ &nbsp;</button>
 
-    <p><sub>*Liczby oznaczają Wskaźnik AQI pobrany z danego urządzenia pomiarowego, kolory wg. <a href="scale.html" class="no-link2"><b>skali</b></a> </sub></p>
-
-
+    <br><br>
+    W ciągu miesiąca twoje zużycie prądu emituje około:
+    <br><span id="wynik-spalanie"></span> kg CO<sub>2</sub>
+    <script>
+        function SpalanieAuta()
+        {
+            const electricitySpal = 0.7;
+            let spalaniena100 = document.getElementById("input-spalanie-kwh").value;
+            var wynik = spalaniena100 * electricitySpal;
+            document.getElementById("wynik-spalanie").innerHTML = wynik;
+        }
+    </script>
+</div>
 <div class="footer">
     <img src="img/logo.png" width="80px" height="80px"><br>
     <span style="font-size: 25px">Stworzone<sup>&copy;</sup> przez - RV</span>

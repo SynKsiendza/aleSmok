@@ -108,3 +108,54 @@ body
   font-size: 20px;
   padding: 5%;
 }
+.map {
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+}
+.scale_fade
+{
+  width: 90%;
+  height: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  background: #09FF00;
+  background: -moz-linear-gradient(top, #09FF00 0%, #FF0000 100%);
+  background: -webkit-linear-gradient(top, #09FF00 0%, #FF0000 100%);
+  background: linear-gradient(to bottom, #09FF00 0%, #FF0000 100%);
+  border-radius: 10px;
+}
+#wynik-spalanie
+{
+  font-weight: bold;
+  color: #00bcd4;
+}
+.calc-button
+{
+  color: #ffffff;
+  padding: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  align-content: center;
+  background-color: #6AE29B;
+  border-radius: 10px;
+  text-align: center;
+  border-style: none;
+}
+.calc-button:hover
+{
+  background-color: #5AD18A;
+}
+.calc-button:active
+{
+  background-color: #4AC07A;
+}
+input
+{
+  border-radius: 5px;
+  border-style: none;
+  padding: 2px;
+}

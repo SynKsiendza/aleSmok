@@ -27,42 +27,47 @@
 <br><br>
 <a href="smog-calc-electricity.html" class="no-link"><div class="calc-button">Prąd Elektryczny</div></a>
 <div  class="main-content">
-    Spalanie twojego samochodu:<br><br>
-    Ile twój samochód spala na 100km?<br>
-    <input type="number" id="input-spalanie-litrarz" >
+    Ogrzewanie:<br><br>
+    Ilość spalanego materiału w kg/m<sup>3</sup> miesięcznie:<br>
+    <input type="number" id="input-spalanie-kg" >
     <br><br>Rodzaj używanego paliwa:<br>
     <input id="rodzaj-paliwa" list="paliwo">
     <datalist id="paliwo">
-        <option value="LPG" />
-        <option value="Benzyna" />
-        <option value="Olej Napędowy" />
-        <option value="Samochód Elektryczny" />
+        <option value="Węgiel" />
+        <option value="Ekogroszek" />
+        <option value="Pellet" />
+        <option value="Gaz ziemny" />
     </datalist>
     <br><br>
     <button class="calc-button" onclick="SpalanieAuta()">&nbsp; OBLICZ &nbsp;</button>
 
     <br><br>
-    W ciągu stu kilometrów twój samochód emituje:
+    W ciągu miesiąca twoje ogrzewanie emituje około:
     <br><span id="wynik-spalanie"></span> kg CO<sub>2</sub>
     <script>
         function SpalanieAuta()
         {
-            const LPGspalanie = 1.51;
-            const BenzynaSpalanie = 2.31;
-            const ONspalanie =  2.68;
-            let spalaniena100 = document.getElementById("input-spalanie-litrarz").value;
+            const coalSpalanie = 2.25;
+            const ekgSpalanie = 0.010;
+            const PLspalanie = 0.011;
+            const GZspalanie = 1.96;
+            let spalaniena100 = document.getElementById("input-spalanie-kg").value;
             var paliwo = document.getElementById("rodzaj-paliwa").value;
-            if (paliwo === "LPG")
+            if (paliwo === "Węgiel")
             {
-                var wynik = LPGspalanie * spalaniena100;
+                var wynik = coalSpalanie * spalaniena100;
             }
-            else if (paliwo === "Benzyna")
+            else if (paliwo === "Ekogroszek")
             {
-                var wynik = BenzynaSpalanie * spalaniena100;
+                var wynik = ekgSpalanie * spalaniena100;
             }
-            else if (paliwo === "Olej Napędowy")
+            else if (paliwo === "Pellet")
             {
-                var wynik = ONspalanie * spalaniena100;
+                var wynik = PLspalanie * spalaniena100;
+            }
+            else if (paliwo === "Gaz ziemny")
+            {
+                var wynik = GZspalanie * spalaniena100;
             }
             else
             {

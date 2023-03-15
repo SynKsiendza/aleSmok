@@ -18,5 +18,8 @@ public class MainActivity extends AppCompatActivity {
         mWebView.loadUrl("file:///android_asset/www/index.html");
         WebSettings mWebSettings = mWebView.getSettings();
         mWebSettings.setJavaScriptEnabled(true);
+        WebSettings settings = mWebView.getSettings();
+        settings.setDomStorageEnabled(true);
     }
+
 }
