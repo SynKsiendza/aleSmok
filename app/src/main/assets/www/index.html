@@ -14,6 +14,7 @@
 
     <script src="js/index.js"></script>
     <script src="js/actions.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=caa1a600a91d70b66f7c20bb3ae178fe"></script>
 
 </head>
 <body>
@@ -22,29 +23,17 @@
     <br>
     <h4>Jakość Powietrza w twojej okolicy to też twój problem!</h4>
 </div>
-<a href="smog-map.html" class="no-link"><div class="indicator-box">
-    <div class="indicator">
-        <img class="indicator_png" src="img/indicator_good.png">
-        <script  type="text/javascript"  charset="utf-8">
-            (function(w,d,t,f){  w[f]=w[f]||function(c,k,n){s=w[f],k=s['k']=(s['k']||(k?('&k='+k):''));s['c']=
-                c=(c  instanceof  Array)?c:[c];s['n']=n=n||0;L=d.createElement(t),e=d.getElementsByTagName(t)[0];
-                L.async=1;L.src='//feed.aqicn.org/feed/'+(c[n].city)+'/'+(c[n].lang||'')+'/feed.v1.js?n='+n+k;
-                e.parentNode.insertBefore(L,e);  };  })(  window,document,'script','_aqiFeed'  );
 
-            _aqiFeed({
-                display:"%cityname  AQI  is  %aqi<br><small>on  %date</small>",
-                container:"city-aqi-container-display",
-                city:"warsaw",
-                lang:"pl",
-            });
-        </script>
+<div class="indicator-box">
+    <div style="height: 90%"  name="airvisual_widget" key="64138229653f8acc0acbac90"></div>
+    <script type="text/javascript" src="https://widget.iqair.com/script/widget_v3.0.js"></script>
+</div>
 
-        <span onload="aqifeed()" id="city-aqi-container"></span>
-
-
-    </div>
-</div></a>
+</div>
 <div class="more-pages">
+    <a href="smog-map.html" class="no-link"><div class="button-smog-calc">
+        Mapa zanieczyszczeń powietrza
+    </div></a>
     <a href="smog-calc.html" class="no-link"><div class="button-smog-calc">
         Kalkulator śladu węglowego
     </div></a>
