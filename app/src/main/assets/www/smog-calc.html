@@ -29,48 +29,38 @@
 <div  class="main-content">
     Spalanie twojego samochodu:<br><br>
     Ile twój samochód spala na 100km?<br>
-    <input type="number" id="input-spalanie-litrarz" >
+    <input type="number" min="0" id="input-spalanie-litrarz" >
     <br><br>Rodzaj używanego paliwa:<br>
-    <input id="rodzaj-paliwa" list="paliwo">
-    <datalist id="paliwo">
-        <option value="LPG" />
-        <option value="Benzyna" />
-        <option value="Olej Napędowy" />
-        <option value="Samochód Elektryczny" />
-    </datalist>
+    <button id="LPGCH" onclick="LPG()" class="calc-button">LPG</button> <button id="ONCH" onclick="ON()" class="calc-button">Olej Napędowy</button>
+    <button id="benzynaCH" onclick="Benzyna()" class="calc-button">Benzyna</button>
     <br><br>
-    <button class="calc-button" onclick="SpalanieAuta()">&nbsp; OBLICZ &nbsp;</button>
-
     <br><br>
-    W ciągu stu kilometrów twój samochód emituje:
+    W ciągu stu kilometrów twój samochód emituje około:
     <br><span id="wynik-spalanie"></span> kg CO<sub>2</sub>
     <script>
-        function SpalanieAuta()
+        function LPG()
         {
             var LPGspalanie = 1.51;
-            var BenzynaSpalanie = 2.5;
-            var ONspalanie = 2.68;
             let spalaniena100 = document.getElementById("input-spalanie-litrarz").value;
-            var paliwo = document.getElementById("rodzaj-paliwa").value;
-            if (paliwo === "LPG")
-            {
-                var wynik = LPGspalanie * spalaniena100;
-            }
-            else if (paliwo === "Benzyna")
-            {
-                var wynik = BenzynaSpalanie * spalaniena100;
-            }
-            else if (paliwo === "Olej Napędowy")
-            {
-                var wynik = ONspalanie * spalaniena100;
-            }
-            else
-            {
-                var wynik = 0;
-            }
+            var wynik = LPGspalanie * spalaniena100;
             document.getElementById("wynik-spalanie").innerHTML = wynik;
         }
-    </script>
+        function ON()
+        {
+            var ONspalanie = 2.68;
+            let spalaniena100 = document.getElementById("input-spalanie-litrarz").value;
+            var wynik = ONspalanie * spalaniena100;
+            document.getElementById("wynik-spalanie").innerHTML = wynik;
+        }
+        function Benzyna()
+        {
+            var BenzynaSpalanie = 2.5;
+            let spalaniena100 = document.getElementById("input-spalanie-litrarz").value;
+            var wynik = BenzynaSpalanie * spalaniena100;
+            document.getElementById("wynik-spalanie").innerHTML = wynik;
+        }
+
+        </script>
 </div>
 <div class="footer">
     <img src="img/logo.png" width="80px" height="80px"><br>

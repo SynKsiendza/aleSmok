@@ -31,48 +31,41 @@
     Ilość spalanego materiału w kg/m<sup>3</sup> miesięcznie:<br>
     <input type="number" id="input-spalanie-kg" >
     <br><br>Rodzaj używanego paliwa:<br>
-    <input id="rodzaj-paliwa" list="paliwo">
-    <datalist id="paliwo">
-        <option value="Węgiel" />
-        <option value="Ekogroszek" />
-        <option value="Pellet" />
-        <option value="Gaz ziemny" />
-    </datalist>
+    <button id="coalCH" onclick="coal()" class="calc-button">Węgiel</button>
+    <button id="ekoCH" onclick="Eko()" class="calc-button">Ekogroszek</button><br>
+    <button id="pelletCH" onclick="pellet()" class="calc-button">Pellet</button>
+    <button id="gazCH" onclick="gas()" class="calc-button">Gaz ziemny</button>
     <br><br>
-    <button class="calc-button" onclick="SpalanieAuta()">&nbsp; OBLICZ &nbsp;</button>
-
     <br><br>
     W ciągu miesiąca twoje ogrzewanie emituje około:
     <br><span id="wynik-spalanie"></span> kg CO<sub>2</sub>
     <script>
-        function SpalanieAuta()
+        function coal()
         {
-            const coalSpalanie = 2.25;
-            const ekgSpalanie = 0.010;
-            const PLspalanie = 0.011;
-            const GZspalanie = 1.96;
-            let spalaniena100 = document.getElementById("input-spalanie-kg").value;
-            var paliwo = document.getElementById("rodzaj-paliwa").value;
-            if (paliwo === "Węgiel")
-            {
-                var wynik = coalSpalanie * spalaniena100;
-            }
-            else if (paliwo === "Ekogroszek")
-            {
-                var wynik = ekgSpalanie * spalaniena100;
-            }
-            else if (paliwo === "Pellet")
-            {
-                var wynik = PLspalanie * spalaniena100;
-            }
-            else if (paliwo === "Gaz ziemny")
-            {
-                var wynik = GZspalanie * spalaniena100;
-            }
-            else
-            {
-                var wynik = 0;
-            }
+            var coalspalanie = 2.25;
+            let spalanie = document.getElementById("input-spalanie-kg").value;
+            var wynik = coalspalanie * spalanie;
+            document.getElementById("wynik-spalanie").innerHTML = wynik;
+        }
+        function Eko()
+        {
+            var ekospalanie = 0.010;
+            let spalanie = document.getElementById("input-spalanie-kg").value;
+            var wynik = ekospalanie * spalanie;
+            document.getElementById("wynik-spalanie").innerHTML = wynik;
+        }
+        function pellet()
+        {
+            var pelletspalanie = 0.011;
+            let spalanie = document.getElementById("input-spalanie-kg").value;
+            var wynik = pelletspalanie * spalanie;
+            document.getElementById("wynik-spalanie").innerHTML = wynik;
+        }
+        function gas()
+        {
+            var gasspalanie = 1.96;
+            let spalanie = document.getElementById("input-spalanie-kg").value;
+            var wynik = gasspalanie * spalanie;
             document.getElementById("wynik-spalanie").innerHTML = wynik;
         }
     </script>
